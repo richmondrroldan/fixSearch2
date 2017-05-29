@@ -12,10 +12,11 @@ USE App\Skills;
 
 class mentorsCRUDController extends Controller
 {
-    public function index(Request $request, Skills $skills)
+    public function index(Request $request)
     {
+        $skill= Skills::all();
         $mentors= Mentors::orderBy('skills_id','ASC')->paginate(5);
-        return view('mentorCRUD.index',compact('mentors', 'skills'))
+        return view('mentorCRUD.index',compact('mentors', 'skill'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
     public function skills(Request $request)

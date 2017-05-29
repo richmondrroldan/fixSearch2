@@ -25,9 +25,9 @@
             <th>Short Bio</th>
             <th width="280px">Action</th>
         </tr>
-    @foreach ($skills as $skill)
+    @foreach ($skill as $mentor)
     <tr>
-        <td>{{ $skill->title}}</td>
+        <td>{{ $mentor->title}}</td>
         <td>{{ $mentor->skills_id}}</td>
         <td>{{ $mentor->shortBio}}</td>
         <td>
