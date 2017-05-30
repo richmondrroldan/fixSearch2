@@ -1,18 +1,21 @@
 @extends('layouts.default')
  
 @section('content')
-
+<style type="text/css">
+    .center {
+        text-align:center;
+}
+</style>
     <div class="row">
              
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Expertise</h2>
-            
-            <div>
+                <h2>Expertise</h2>  
+            </div>
             <table class="table table-bordered">
         @foreach($skills as $skill)
         
-        <tr>
+        <tr class="pull-left">
                 <th><a class="btn btn-info" href="skills/{{$skill->id}}">{{$skill->title}}</a>
                 </br>
             </th>
@@ -20,7 +23,7 @@
 
  @endforeach
         </table>
-           
+
 
            <div class="pull-right">
                <a class="btn btn-info" href="/">Back
