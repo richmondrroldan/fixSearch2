@@ -25,19 +25,19 @@
             <th>Short Bio</th>
             <th width="280px">Action</th>
         </tr>
-    @foreach ($skill as $mentor)
-    <tr>
-        <td>{{ $mentor->title}}</td>
-        <td>{{ $mentor->skills_id}}</td>
-        <td>{{ $mentor->shortBio}}</td>
-        <td>
-            <a class="btn btn-info" href="{{ route('mentorsCRUD.show',$mentor->id) }}">Show</a>
-            <a class="btn btn-primary" href="{{ route('mentorsCRUD.edit',$mentor->id) }}">Edit</a>
-            {!! Form::open(['method' => 'DELETE','route' => ['mentorsCRUD.destroy', $mentor->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-            {!! Form::close() !!}
-        </td>
-    </tr>
+        @foreach ($skill->mentors as $mentor)
+        <tr>
+            <td>{{ $mentor->title}}</td>
+            <td>{{ $mentor->skills_id}}</td>
+            <td>{{ $mentor->shortBio}}</td>
+            <td>
+                <a class="btn btn-info" href="{{ route('mentorsCRUD.show',$mentor->id) }}">Show</a>
+                <a class="btn btn-primary" href="{{ route('mentorsCRUD.edit',$mentor->id) }}">Edit</a>
+                {!! Form::open(['method' => 'DELETE','route' => ['mentorsCRUD.destroy', $mentor->id],'style'=>'display:inline']) !!}
+                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                {!! Form::close() !!}
+            </td>
+        </tr>
     @endforeach
     </table>
     <div class="pull-right">

@@ -12,22 +12,33 @@ USE App\Skills;
 
 class mentorsCRUDController extends Controller
 {
-    public function index(Request $request)
+    public function index(Skills $skill)
     {
-        $skill= Skills::all();
-        $mentors= Mentors::orderBy('skills_id','ASC')->paginate(5);
-        return view('mentorCRUD.index',compact('mentors', 'skill'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+        return view('mentorCRUD.index', compact('skill'));
+         
+        //Skills::orderBy('id','ASC')->paginate(5); Request $request, Skills $skill
+        //return view('mentorCRUD.index',compact('skill'))
+          //  ->with('i', ($request->input('page', 1) - 1) * 5);
     }
     public function skills(Request $request)
     {
         $skills= Skills::all();
         return view('mentorVIEW.list',compact('skills'));
     }
-    public function mentors(Skills $skill)
+    public function skillsA(Request $request)
+    {
+        $skills= Skills::all();
+        return view('mentorCRUD.listA',compact('skills'));
+    }
+    public function mentor(Skills $skill)
     {
 
         return view('mentorVIEW.mentors',compact('skill'));
+    }
+    public function mentorA(Skills $skill)
+    {
+
+        return view('mentorCRUD.mentorsA',compact('skill'));
     }
     
     public function create()

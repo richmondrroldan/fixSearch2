@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     You are logged in!
                                 <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('mentorsCRUD.index') }}"> View Mentor List</a>
+                <a class="btn btn-success" href="/skillsA"> View Mentor List</a>
             </div>
                 </div>
             </div>

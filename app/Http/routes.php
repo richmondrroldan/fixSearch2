@@ -16,7 +16,11 @@ Route::get('/', function () {
 });
 Route::get('skills', 'mentorsCRUDController@skills');
 
-Route::get('skills/{skill}', 'mentorsCRUDController@mentors');
+Route::get('skills/{skill}', 'mentorsCRUDController@mentor');
+
+Route::get('skillsA', 'mentorsCRUDController@skillsA');
+
+Route::get('skillsA/{skill}', 'mentorsCRUDController@mentorA');
 
 Route::resource('mentorsCRUD', 'mentorsCRUDController');
 
