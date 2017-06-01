@@ -82,8 +82,9 @@ class mentorsCRUDController extends Controller
      */
     public function edit($id)
     {
+        $skills= Skills::all();
         $mentors= Mentors::find($id);
-        return view('mentorCRUD.edit',compact('mentors'));
+        return view('mentorCRUD.edit',compact('mentors', 'skills'));
     }
     /**
      * Update the specified resource in storage.
@@ -96,11 +97,11 @@ class mentorsCRUDController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'Expertise' => 'required',
+            'skills_id' => 'required',
             'shortBio' => 'required',
         ]);
         Mentors::find($id)->update($request->all());
-        return redirect()->route('mentorsCRUD.index')
+        return redirect()->route('mentorsCRUD.skillsA')
                         ->with('success','Mentor updated successfully');
     }
     /**
