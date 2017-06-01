@@ -22,19 +22,14 @@ class mentorsCRUDController extends Controller
     public function skills(Request $request)
     {
         $skills= Skills::all();
-        return view('mentorCRUD.list',compact('skills'));
+        return view('mentorVIEW.list',compact('skills'));
     }
     public function mentors(Skills $skill)
     {
 
-        return view('mentorCRUD.mentors',compact('skill'));
+        return view('mentorVIEW.mentors',compact('skill'));
     }
     
-    public function mentorsADMIN(Skills $skill)
-    {
-        $skill = Skills::all();
-        return view('mentorCRUD.mentorsA',compact('skill'));
-    }
     public function create()
     {   
         $skills = Skills::all();
@@ -66,7 +61,7 @@ class mentorsCRUDController extends Controller
     public function show($id)
     {
         $mentors= Mentors::find($id);
-        return view('mentorCRUD.show',compact('mentors'));
+        return view('mentorVIEW.show',compact('mentors'));
     }
     /**
      * Show the form for editing the specified resource.

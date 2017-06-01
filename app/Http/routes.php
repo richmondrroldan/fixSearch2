@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('mentorCRUD.skills');
+    return view('mentorVIEW.skills');
 });
 Route::get('skills', 'mentorsCRUDController@skills');
 

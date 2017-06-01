@@ -13,7 +13,7 @@
                 <tr>
                     <th>Name</th>
                     <th>Expertise</th>
-                    <th>Action</th>
+                    <th>Credentials</th>
                 </tr>
             @foreach ($skill->mentors as $mentor)
             <tr>
